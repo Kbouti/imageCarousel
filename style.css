@@ -1,0 +1,23 @@
+*{
+    margin:0;
+}
+
+
+.header {
+  width: 100vw;
+  height: 15vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.carousel {
+  width: 100vw;
+  height: 65vh;
+  background-color: grey;
+}
+
+.footer {
+  width: 100vw;
+  height: 10vh;
+}
