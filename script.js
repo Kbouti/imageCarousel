@@ -11,3 +11,7 @@
 
 // 4. If desired, create a .prettierrc file to indicate preferences. I'll leave it in the stock configuration
 // 5. If needed, configure with esLint
+
+
+
+// Found a good carousel tutorial: https://www.youtube.com/watch?v=UnWd2END-IY
