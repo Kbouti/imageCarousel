@@ -23,8 +23,8 @@
   height: 65vh;
   background-color: grey;
   position: relative;
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -50,27 +50,32 @@
 }
 
 .left {
-    top:50%;
-    left:1rem;
+  top: 50%;
+  left: 1rem;
 }
 
 .right {
-    top:50%;
-    right:1rem;
+  top: 50%;
+  right: 1rem;
 }
 
-.indicatorContainer{
-    position:absolute;
-    bottom: 2rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding:.5rem
-
-
+.indicatorContainer {
+  position: absolute;
+  bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem;
 }
 
 .indicator {
-    display:inline-block;
-   color:yellow;
+  display: inline-block;
+  color: yellow;
+}
 
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

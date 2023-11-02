@@ -1,44 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Carousel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
     <div class="header">
-        <h1>Image Carousel Practice</h1>
+      <h1>Image Carousel Practice</h1>
     </div>
 
     <div class="carousel">
-
-
-
-        <span class="arrowButton left">
-            <span class="material-symbols-outlined">chevron_left</span>
-        </span>
-        <span class="arrowButton right">
-            <span class="material-symbols-outlined">chevron_right</span>
-        </span>
-
-        <div class="indicatorContainer">
-
-            <input type="radio" name="carouselSelector" value="slide1">
-            <input type="radio" name="carouselSelector" value="slide2">
-            <input type="radio" name="carouselSelector" value="slide3">
-            <input type="radio" name="carouselSelector" value="slide4">
-            <input type="radio" name="carouselSelector" value="slide5">
+      <div class="slideContainer">
+        <div class="slide">
+          <img
+            src="https://images.unsplash.com/photo-1698766767195-fdaba9166ab9?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Snowy Switzerland"
+          />
         </div>
 
+        <div class="slide">
+          <img
+            src="https://images.unsplash.com/photo-1698692937363-7eaf265c7d3f?auto=format&fit=crop&q=80&w=1674&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Peninsula from above"
+          />
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://images.unsplash.com/photo-1693773603999-8d18c2434982?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1NXx8fGVufDB8fHx8fA%3D%3D"
+            alt="Beach from above"
+          />
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://images.unsplash.com/photo-1682686581218-82326951f4ad?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Freediver"
+          />
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1682686581030-7fa4ea2b96c3?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8" alt="Freediver with turtle">
+        </div>
+      </div>
+
+      <span class="arrowButton left">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </span>
+      <span class="arrowButton right">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </span>
+
+      <div class="indicatorContainer">
+        <input type="radio" name="carouselSelector" value="slide1" />
+        <input type="radio" name="carouselSelector" value="slide2" />
+        <input type="radio" name="carouselSelector" value="slide3" />
+        <input type="radio" name="carouselSelector" value="slide4" />
+        <input type="radio" name="carouselSelector" value="slide5" />
+      </div>
     </div>
 
     <div class="footer"></div>
-    
-</body>
+  </body>
 </html>
