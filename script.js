@@ -51,5 +51,27 @@ function getCheckedRadio() {
   return checkedRadio;
 }
 
+function convertRadioToSlide(radio) {
+  let indexNumber = radio.slice(-1);
+  console.log(indexNumber);
+
+  let slide = `slide${indexNumber}`;
+  console.log(slide);
+  return slide;
+}
+
+let radio = document.querySelectorAll(`input[name=carouselSelector]`);
+
+for (let button of radio){
+    button.addEventListener(`click`, function () {
+        console.log(`radio event triggered`);
+        let checkedRadio = getCheckedRadio();
+        let slide = convertRadioToSlide(checkedRadio);
+        unhideSelected(slide);
+      });
+}
+
+
+
 function slideForward() {}
 function slideBackward() {}
