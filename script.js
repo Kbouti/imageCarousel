@@ -62,48 +62,43 @@ function convertRadioToSlide(radio) {
 
 let radio = document.querySelectorAll(`input[name=carouselSelector]`);
 
-for (let button of radio){
-    button.addEventListener(`click`, function () {
-        console.log(`radio event triggered`);
-        let checkedRadio = getCheckedRadio();
-        let slide = convertRadioToSlide(checkedRadio);
-        unhideSelected(slide);
-      });
+for (let button of radio) {
+  button.addEventListener(`click`, function () {
+    console.log(`radio event triggered`);
+    let checkedRadio = getCheckedRadio();
+    let slide = convertRadioToSlide(checkedRadio);
+    unhideSelected(slide);
+  });
 }
-
-
 
 function slideForward() {
-    let checkedRadio = getCheckedRadio();
-console.log(checkedRadio);
-
-let index = checkedRadio.slice(-1);
-console.log(index);
-
-let indexInteger = +index;
-indexInteger++;
-let newSlide = `slide${indexInteger}`;
-console.log(newSlide);
-
-unhideSelected(newSlide);
-let radio = document.getElementById(`radio${indexInteger}`);
-radio.checked = true;
-
+  let checkedRadio = getCheckedRadio();
+  let index = checkedRadio.slice(-1);
+  let indexInteger = +index;
+  indexInteger++;
+  let newSlide = `slide${indexInteger}`;
+  unhideSelected(newSlide);
+  let radio = document.getElementById(`radio${indexInteger}`);
+  radio.checked = true;
 }
-function slideBackward() {}
-
-
-
-
-
+function slideBackward() {
+    let checkedRadio = getCheckedRadio();
+    let index = checkedRadio.slice(-1);
+    let indexInteger = +index;
+    indexInteger--;
+    let newSlide = `slide${indexInteger}`;
+    unhideSelected(newSlide);
+    let radio = document.getElementById(`radio${indexInteger}`);
+    radio.checked = true;
+}
 
 let rightArrowButton = document.getElementsByClassName("arrowButton right");
 let leftArrowButton = document.getElementsByClassName("arrowButton left");
 
-rightArrowButton[0].addEventListener(`click`, function(){
-    slideForward();
-})
+rightArrowButton[0].addEventListener(`click`, function () {
+  slideForward();
+});
 
-leftArrowButton[0].addEventListener(`click`, function(){
-    slideBackward();
-})
+leftArrowButton[0].addEventListener(`click`, function () {
+  slideBackward();
+});
