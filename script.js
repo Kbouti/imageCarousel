@@ -30,7 +30,18 @@ function findSelectedSlide() {
   }
 }
 
-function unhideSelected(selected) {}
+function unhideSelected(selected) {
+  for (const slide of slides) {
+    if (slide.id === selected) {
+      slide.classList.remove(`hidden`);
+    } else {
+      if (!slide.classList.contains(`hidden`)) {
+        slide.classList.add(`hidden`);
+      }
+    }
+  }
+  return;
+}
 
 function slideForward() {}
 function slideBackward() {}
