@@ -15,16 +15,13 @@
 // Found a good carousel tutorial: https://www.youtube.com/watch?v=UnWd2END-IY
 
 let slides = document.querySelectorAll("div.slide");
-console.log(slides.length);
 
 function findSelectedSlide() {
   // This returns the id of the slide that isn't hidden. It assumes only one slide can be visible, but does not check further once it finds a visible slide
   for (let i = 0; i < slides.length; i++) {
     if (slides[i].classList.contains("hidden")) {
-      console.log(`slide ${slides[i].id} is hidden`);
     } else {
       let selectedId = slides[i].id;
-      console.log(`The selected slide is ${selectedId}`);
       return selectedId;
     }
   }
@@ -47,16 +44,12 @@ function getCheckedRadio() {
   const checkedRadio = document.querySelector(
     `input[name=carouselSelector]:checked`
   ).value;
-  console.log(checkedRadio);
   return checkedRadio;
 }
 
 function convertRadioToSlide(radio) {
   let indexNumber = radio.slice(-1);
-  console.log(indexNumber);
-
   let slide = `slide${indexNumber}`;
-  console.log(slide);
   return slide;
 }
 
@@ -64,7 +57,6 @@ let radio = document.querySelectorAll(`input[name=carouselSelector]`);
 
 for (let button of radio) {
   button.addEventListener(`click`, function () {
-    console.log(`radio event triggered`);
     let checkedRadio = getCheckedRadio();
     let slide = convertRadioToSlide(checkedRadio);
     unhideSelected(slide);
@@ -76,20 +68,22 @@ function slideForward() {
   let index = checkedRadio.slice(-1);
   let indexInteger = +index;
   indexInteger++;
+  indexInteger = checkIndexInteger(indexInteger);
   let newSlide = `slide${indexInteger}`;
   unhideSelected(newSlide);
   let radio = document.getElementById(`radio${indexInteger}`);
   radio.checked = true;
 }
 function slideBackward() {
-    let checkedRadio = getCheckedRadio();
-    let index = checkedRadio.slice(-1);
-    let indexInteger = +index;
-    indexInteger--;
-    let newSlide = `slide${indexInteger}`;
-    unhideSelected(newSlide);
-    let radio = document.getElementById(`radio${indexInteger}`);
-    radio.checked = true;
+  let checkedRadio = getCheckedRadio();
+  let index = checkedRadio.slice(-1);
+  let indexInteger = +index;
+  indexInteger--;
+  indexInteger = checkIndexInteger(indexInteger);
+  let newSlide = `slide${indexInteger}`;
+  unhideSelected(newSlide);
+  let radio = document.getElementById(`radio${indexInteger}`);
+  radio.checked = true;
 }
 
 let rightArrowButton = document.getElementsByClassName("arrowButton right");
@@ -102,3 +96,18 @@ rightArrowButton[0].addEventListener(`click`, function () {
 leftArrowButton[0].addEventListener(`click`, function () {
   slideBackward();
 });
+
+function checkIndexInteger(index) {
+  if (index > 5) {
+    index = 1;
+  } else if (index < 1) {
+    index = 5;
+  }
+  return index;
+}
+
+
+
+
+// It all works - but there's a bug:
+// When the page is refreshed the selected photo returns to 1, but the checked radio doesn't change accordingly
