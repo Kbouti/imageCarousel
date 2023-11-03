@@ -73,5 +73,37 @@ for (let button of radio){
 
 
 
-function slideForward() {}
+function slideForward() {
+    let checkedRadio = getCheckedRadio();
+console.log(checkedRadio);
+
+let index = checkedRadio.slice(-1);
+console.log(index);
+
+let indexInteger = +index;
+indexInteger++;
+let newSlide = `slide${indexInteger}`;
+console.log(newSlide);
+
+unhideSelected(newSlide);
+let radio = document.getElementById(`radio${indexInteger}`);
+radio.checked = true;
+
+}
 function slideBackward() {}
+
+
+
+
+
+
+let rightArrowButton = document.getElementsByClassName("arrowButton right");
+let leftArrowButton = document.getElementsByClassName("arrowButton left");
+
+rightArrowButton[0].addEventListener(`click`, function(){
+    slideForward();
+})
+
+leftArrowButton[0].addEventListener(`click`, function(){
+    slideBackward();
+})
