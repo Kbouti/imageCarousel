@@ -112,7 +112,3 @@ function resetRadio(){
     let radio = document.getElementById(`radio1`);
     radio.checked = true;
 }
-
-
-// It all works - but there's a bug:
-// When the page is refreshed the selected photo returns to 1, but the checked radio doesn't change accordingly
