@@ -18,23 +18,19 @@ let slides = document.querySelectorAll("div.slide");
 console.log(slides.length);
 
 function findSelectedSlide() {
-  // This returns the class name of the slide that isn't hidden. It assumes only one slide can be visible, but does not check further once it finds a visible slide
+  // This returns the id of the slide that isn't hidden. It assumes only one slide can be visible, but does not check further once it finds a visible slide
   for (let i = 0; i < slides.length; i++) {
     if (slides[i].classList.contains("hidden")) {
-      console.log(`This slide is hidden`);
-      let classList = slides[i].classList;
-      let slideName = classList[1];
-      console.log(`slide Name is: ${slideName}`);
-      console.log(classList);
+      console.log(`slide ${slides[i].id} is hidden`);
     } else {
-      console.log(`This slide is selected`);
-      let classList = slides[i].classList;
-      let selectedSlideName = classList[1];
-      console.log(`slide Name is: ${selectedSlideName}`);
-      return selectedSlideName;
+      let selectedId = slides[i].id;
+      console.log(`The selected slide is ${selectedId}`);
+      return selectedId;
     }
   }
 }
+
+function unhideSelected(selected) {}
 
 function slideForward() {}
 function slideBackward() {}
