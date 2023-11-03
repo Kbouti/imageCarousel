@@ -14,6 +14,8 @@
 
 // Found a good carousel tutorial: https://www.youtube.com/watch?v=UnWd2END-IY
 
+resetRadio();
+
 let slides = document.querySelectorAll("div.slide");
 
 function findSelectedSlide() {
@@ -106,7 +108,10 @@ function checkIndexInteger(index) {
   return index;
 }
 
-
+function resetRadio(){
+    let radio = document.getElementById(`radio1`);
+    radio.checked = true;
+}
 
 
 // It all works - but there's a bug:
