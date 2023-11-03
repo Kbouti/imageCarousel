@@ -16,18 +16,9 @@
 
 resetRadio();
 
-let slides = document.querySelectorAll("div.slide");
+setInterval(slideForward, 5000);
 
-function findSelectedSlide() {
-  // This returns the id of the slide that isn't hidden. It assumes only one slide can be visible, but does not check further once it finds a visible slide
-  for (let i = 0; i < slides.length; i++) {
-    if (slides[i].classList.contains("hidden")) {
-    } else {
-      let selectedId = slides[i].id;
-      return selectedId;
-    }
-  }
-}
+let slides = document.querySelectorAll("div.slide");
 
 function unhideSelected(selected) {
   for (const slide of slides) {
@@ -76,6 +67,7 @@ function slideForward() {
   let radio = document.getElementById(`radio${indexInteger}`);
   radio.checked = true;
 }
+
 function slideBackward() {
   let checkedRadio = getCheckedRadio();
   let index = checkedRadio.slice(-1);
