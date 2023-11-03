@@ -43,5 +43,13 @@ function unhideSelected(selected) {
   return;
 }
 
+function getCheckedRadio() {
+  const checkedRadio = document.querySelector(
+    `input[name=carouselSelector]:checked`
+  ).value;
+  console.log(checkedRadio);
+  return checkedRadio;
+}
+
 function slideForward() {}
 function slideBackward() {}
