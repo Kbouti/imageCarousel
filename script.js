@@ -20,7 +20,7 @@ setInterval(slideForward, 5000);
 
 let slides = document.querySelectorAll("div.slide");
 
-function unhideSelected(selected) {
+function revealSelected(selected) {
   for (const slide of slides) {
     if (slide.id === selected) {
       slide.classList.remove(`hidden`);
@@ -52,7 +52,7 @@ for (let button of radio) {
   button.addEventListener(`click`, function () {
     let checkedRadio = getCheckedRadio();
     let slide = convertRadioToSlide(checkedRadio);
-    unhideSelected(slide);
+    revealSelected(slide);
   });
 }
 
@@ -63,7 +63,7 @@ function slideForward() {
   indexInteger++;
   indexInteger = checkIndexInteger(indexInteger);
   let newSlide = `slide${indexInteger}`;
-  unhideSelected(newSlide);
+  revealSelected(newSlide);
   let radio = document.getElementById(`radio${indexInteger}`);
   radio.checked = true;
 }
@@ -75,7 +75,7 @@ function slideBackward() {
   indexInteger--;
   indexInteger = checkIndexInteger(indexInteger);
   let newSlide = `slide${indexInteger}`;
-  unhideSelected(newSlide);
+  revealSelected(newSlide);
   let radio = document.getElementById(`radio${indexInteger}`);
   radio.checked = true;
 }
