@@ -27,7 +27,6 @@
   justify-content: center;
 }
 
-
 .footer {
   width: 100vw;
   height: 10vh;
@@ -42,10 +41,6 @@
   height: 3rem;
   width: 3rem;
   border-radius: 10%;
-
-
-
-  z-index: 2;
 }
 
 .arrowButton:hover {
@@ -85,13 +80,20 @@
   object-position: center;
 }
 
-
-
-.hidden{
-    display:none;
+.hidden {
+  display:none;
 }
 
-input[type="radio"]{
-    color:aqua;
-    background-color:red;
+
+
+/* Sooooo instead of using display:none to dissapear items - which makes it so that we can't transition, I can position the slides in the slidecarousel usingposition absolute so they all stack on top of each other. Then use opacity instead of display to hide/reveal slides.  */
+
+
+
+
+
+
+input[type="radio"] {
+  color: aqua;
+  background-color: red;
 }
