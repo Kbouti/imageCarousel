@@ -7,12 +7,14 @@
 // 2. Install prettier:
 // npm i --save-dev --save-exact prettier
 
-// 3. create .prettierignore file and add node_modules
+// 3. create .prettierignore file and add node_modules:
+// touch .prettierignore
+// echo node_modules > .prettierignore
 
 // 4. If desired, create a .prettierrc file to indicate preferences. I'll leave it in the stock configuration
 // 5. If needed, configure with esLint
 
-// Found a good carousel tutorial: https://www.youtube.com/watch?v=UnWd2END-IY
+// helpful git tutorial: https://www.youtube.com/watch?v=Lf3DYRvCPFo
 
 resetRadio();
 
