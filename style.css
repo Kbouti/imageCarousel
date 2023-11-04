@@ -41,6 +41,7 @@
   height: 3rem;
   width: 3rem;
   border-radius: 10%;
+  z-index: 2;
 }
 
 .arrowButton:hover {
@@ -65,11 +66,7 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 0.5rem;
-}
-
-.indicator {
-  display: inline-block;
-  color: yellow;
+  z-index: 2;
 }
 
 .slide > img {
@@ -78,22 +75,16 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  left: 0px;
+}
+
+.slide {
+  opacity: 1;
+  transition: 500ms opacity ease-in-out;
 }
 
 .hidden {
-  display:none;
-}
-
-
-
-/* Sooooo instead of using display:none to dissapear items - which makes it so that we can't transition, I can position the slides in the slidecarousel usingposition absolute so they all stack on top of each other. Then use opacity instead of display to hide/reveal slides.  */
-
-
-
-
-
-
-input[type="radio"] {
-  color: aqua;
-  background-color: red;
+  opacity: 0;
+  transition: 500ms opacity ease-in-out;
 }
